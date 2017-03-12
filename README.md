@@ -1,9 +1,9 @@
-# @lassehaslev/vue-coordinate-input
+# @lassehaslev/vue-autocomplete
 
-> Coordinates input using Vue
+> Autocomplete input using Vue
 
 ## Installation
-Run ```npm install @lassehaslev/vue-coordinate-input --save``` in your project folder
+Run ```npm install @lassehaslev/vue-autocomplete --save``` in your project folder
 
 ## Build Setup
 
