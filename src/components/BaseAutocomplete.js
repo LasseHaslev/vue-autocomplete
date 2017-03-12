@@ -13,6 +13,18 @@ export default {
             default() {
                 throw 'No search function is set.';
             }
+        },
+        adaptor: {
+            type: Function,
+            default( response ) {
+                return response;
+            }
+        }
+    },
+
+    data() {
+        return {
+            choices: [],
         }
     },
 
@@ -23,8 +35,9 @@ export default {
 
     methods: {
         doneTyping() {
+            var self = this;
             this.search( this.inputValue ).then( function( response ) {
-                console.log(response);
+                self.choices = self.adaptor( response );
             } )
         },
     }

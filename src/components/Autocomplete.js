@@ -4,12 +4,17 @@ export default {
     mixins: [ BaseAutocomplete ],
 
     template: `
-        <p class="control">
-            <input class="input"
-            type="text"
-            :name="name"
-            :placeholder="placeholder"
-            v-model="inputValue">
-        </p>
+        <div>
+            <p class="control">
+                <input class="input"
+                type="text"
+                :name="name"
+                :placeholder="placeholder"
+                v-model="inputValue">
+            </p>
+            <ul>
+                <li v-for="choice in choices">{{ choice }}</li>
+            </ul>
+        </div>
     `,
 }
