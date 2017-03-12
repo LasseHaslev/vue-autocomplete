@@ -1,13 +1,13 @@
 {
-  "name": "@lassehaslev/vue-coordinate-input",
-  "description": "Coordinate input using Vue",
-  "version": "0.1.0",
+  "name": "@lassehaslev/vue-autocomplete",
+  "description": "Autocomplete input using Vue",
+  "version": "0.0.1",
   "author": "Lasse S. Haslev <lasse@haslev.no>",
   "main": "dist/index.js",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lassehaslev/vue-coordinate-input.git"
+    "url": "git+https://github.com/lassehaslev/vue-autocomplete.git"
   },
   "scripts": {
     "serve": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
