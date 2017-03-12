@@ -19,6 +19,10 @@ export default {
             default( response ) {
                 return response;
             }
+        },
+        'min-length': {
+            type: Number,
+            default: 1,
         }
     },
 
@@ -30,7 +34,7 @@ export default {
 
     computed: {
         showChoices() {
-            return this.choices.length && this.inputValue.length;
+            return this.choices.length && this.hasEnoughInputTypes();
         }
     },
 
@@ -42,10 +46,15 @@ export default {
     methods: {
         doneTyping() {
             var self = this;
-            this.search( this.inputValue ).then( function( response ) {
-                self.choices = self.adaptor( response );
-            } )
+            if (this.hasEnoughInputTypes()) {
+                this.search( this.inputValue ).then( function( response ) {
+                    self.choices = self.adaptor( response );
+                } );
+            }
         },
+        hasEnoughInputTypes() {
+            return this.inputValue.length >= this.minLength
+        }
     }
 
 }
