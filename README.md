@@ -9,13 +9,35 @@ Run ```npm install @lassehaslev/vue-autocomplete --save``` in your project folde
 
 ``` js
 import {Autocomplete} from '@lassehaslev/vue-autocomplete';
-<autocomplete
-    value=""
-    placeholder="Type to start autocomplete"
-    @selected="onSelected"
-    :search="onSearch"
-    :adaptor="adaptor"
-    name=""></autocomplete>
+export default {
+    template: `
+        <autocomplete
+            value=""
+            placeholder="Type to start autocomplete"
+            @selected="onSelected"
+            :search="onSearch"
+            :adaptor="adaptor"
+            name=""></autocomplete>
+    `,
+
+    methods: {
+        adaptor( data ) {
+            return data.data;
+        },
+        onSearch( query ) {
+            return axios.get( 'http://localhost:1337/api/states?q=' + query );
+        },
+
+        onSelected( selected ) {
+            console.log( selected );
+        }
+    },
+
+    components: {
+        Autocomplete,
+    }
+
+}
 ```
 
 ## Build Setup
