@@ -13,12 +13,18 @@ export default {
         'input-selector': {
             type: String,
             default: 'input',
+        },
+
+        value: {
+            type: String,
+            default: '',
         }
     },
 
     data() {
         return {
             input: null,
+            inputValue: null,
         };
     },
 
@@ -27,5 +33,7 @@ export default {
         if (! this.input) {
             throw 'We cannot find an input with css selector "' + this.inputSelector + '". Please use ( input-selector=\"{css selctor here}\" ). To help find your element.';
         }
+
+        this.inputValue = this.value;
     },
 }

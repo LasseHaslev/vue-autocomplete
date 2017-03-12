@@ -8,7 +8,8 @@ export default {
             <input class="input"
             type="text"
             :name="name"
-            :placeholder="placeholder">
+            :placeholder="placeholder"
+            v-model="inputValue">
         </p>
     `,
 }
