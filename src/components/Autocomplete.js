@@ -12,9 +12,11 @@ export default {
                 :placeholder="placeholder"
                 v-model="inputValue">
             </p>
-            <ul>
-                <li v-for="choice in choices">{{ choice }}</li>
-            </ul>
+            <div class="panel is-default" v-if="showChoices">
+                <div v-for="choice in choices" class="panel-block">
+                    {{ choice }}
+                </div>
+            </div>
         </div>
     `,
 }

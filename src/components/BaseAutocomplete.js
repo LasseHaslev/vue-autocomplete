@@ -28,6 +28,12 @@ export default {
         }
     },
 
+    computed: {
+        showChoices() {
+            return this.choices.length && this.inputValue.length;
+        }
+    },
+
     mixins: [ 
         Input,
         InputEvents,
