@@ -15,6 +15,7 @@ export default {
 
                     <div class="container">
                         <autocomplete value="" placeholder="Type to start autocomplete" delay="" @selected="onSelected" :search="onSearch" :adaptor="adaptor" name=""></autocomplete>
+                        <div class="help">{{ lastSelected ? 'Last selected is: ' + lastSelected : 'None selected. Write something in input field.' }}</div>
                     </div>
 
                 </div>
@@ -22,6 +23,12 @@ export default {
             
         </div>
     `,
+
+    data() {
+        return {
+            lastSelected: null,
+        }
+    },
 
     methods: {
         adaptor( data ) {
@@ -32,7 +39,7 @@ export default {
         },
 
         onSelected( selected ) {
-            console.log('Outside: ' + selected);
+            this.lastSelected = selected;
         }
     },
 

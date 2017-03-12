@@ -66,6 +66,10 @@ export default {
                 var selectedItem = this.choices[ this.selectedIndex ];
             }
 
+            // Get index of element
+            this.selectedIndex = this.choices.indexOf( selectedItem );
+
+
             this.inputValue = this.choiceAdaptor( selectedItem );
 
             this.$emit( 'selected', selectedItem );
