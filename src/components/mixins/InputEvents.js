@@ -8,7 +8,20 @@ export default {
 
     methods: {
         onKeyUp( evt ) {
-            this.doneTyping();
+            switch (evt.keyCode) {
+                case 38: // Arrow up
+                    this.moveUp();
+                    break;
+                case 40: // Arrow down
+                    this.moveDown();
+                    break;
+                case 13: // Enter
+                    this.confirm();
+                    break;
+                
+                default:
+                    this.doneTyping();
+            }
         },
         onInputFocus( evt ) {
             this.gotFocus();

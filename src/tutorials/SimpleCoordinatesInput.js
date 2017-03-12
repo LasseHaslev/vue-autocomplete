@@ -14,7 +14,7 @@ export default {
                 <div class="hero-body">
 
                     <div class="container">
-                        <autocomplete value="" placeholder="Type to start autocomplete" delay="" @select="" :search="onSearch" :adaptor="adaptor" name=""></autocomplete>
+                        <autocomplete value="" placeholder="Type to start autocomplete" delay="" @selected="onSelected" :search="onSearch" :adaptor="adaptor" name=""></autocomplete>
                     </div>
 
                 </div>
@@ -30,6 +30,10 @@ export default {
         onSearch( query ) {
             return axios.get( 'http://localhost:1337/api/states?q=' + query );
         },
+
+        onSelected( selected ) {
+            console.log('Outside: ' + selected);
+        }
     },
 
     components: {

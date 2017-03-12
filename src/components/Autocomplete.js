@@ -13,7 +13,8 @@ export default {
                 v-model="inputValue">
             </p>
             <div class="panel is-default" v-if="showChoices_">
-                <div v-for="choice in choices" class="panel-block">
+                <div v-for="choice in choices" @click="confirm( choice )" track-by="$index" class="panel-block">
+                    {{ isSelected(choice) ? 'Selected: ' : 'Not selected: ' }}
                     {{ choiceAdaptor( choice ) }}
                 </div>
             </div>

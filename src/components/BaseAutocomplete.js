@@ -1,4 +1,5 @@
 import InputEvents from './mixins/InputEvents';
+import HasChoices from './mixins/HasChoices';
 import Input from './mixins/Input';
 
 export default {
@@ -24,32 +25,11 @@ export default {
             type: Number,
             default: 1,
         },
-
-        'choice-adaptor': {
-            type: Function,
-            default( item ) {
-                return item;
-            },
-        }
-    },
-
-    data() {
-        return {
-            showChoices: false,
-            choices: [],
-        }
-    },
-
-    computed: {
-        showChoices_() {
-            return this.showChoices 
-                && this.choices.length
-                && this.hasEnoughInputTypes();
-        }
     },
 
     mixins: [ 
         Input,
+        HasChoices,
         InputEvents,
     ],
 
@@ -73,6 +53,24 @@ export default {
         },
         hasEnoughInputTypes() {
             return this.inputValue.length >= this.minLength
+        },
+
+        confirm( item ) {
+            if ( !item && !this.choices.length) {
+                return false;
+            }
+            else if (item) {
+                var selectedItem = item;
+            }
+            else {
+                var selectedItem = this.choices[ this.selectedIndex ];
+            }
+
+            this.inputValue = this.choiceAdaptor( selectedItem );
+
+            this.$emit( 'selected', selectedItem );
+
+            this.input.blur();
         },
     }
 
