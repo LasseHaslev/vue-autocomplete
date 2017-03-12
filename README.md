@@ -5,6 +5,19 @@
 ## Installation
 Run ```npm install @lassehaslev/vue-autocomplete --save``` in your project folder
 
+## Usage
+
+``` js
+import {Autocomplete} from '@lassehaslev/vue-autocomplete';
+<autocomplete
+    value=""
+    placeholder="Type to start autocomplete"
+    @selected="onSelected"
+    :search="onSearch"
+    :adaptor="adaptor"
+    name=""></autocomplete>
+```
+
 ## Build Setup
 
 ``` bash
