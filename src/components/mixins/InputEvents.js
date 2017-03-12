@@ -11,10 +11,10 @@ export default {
             this.doneTyping();
         },
         onInputFocus( evt ) {
-            console.log('Focus');
+            this.gotFocus();
         },
         onInputFocusLost( evt ) {
-            console.log('Blur');
+            this.lostFocus();
         },
     },
 }

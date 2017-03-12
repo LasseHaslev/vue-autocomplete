@@ -23,18 +23,28 @@ export default {
         'min-length': {
             type: Number,
             default: 1,
+        },
+
+        'choice-adaptor': {
+            type: Function,
+            default( item ) {
+                return item;
+            },
         }
     },
 
     data() {
         return {
+            showChoices: false,
             choices: [],
         }
     },
 
     computed: {
-        showChoices() {
-            return this.choices.length && this.hasEnoughInputTypes();
+        showChoices_() {
+            return this.showChoices 
+                && this.choices.length
+                && this.hasEnoughInputTypes();
         }
     },
 
@@ -52,9 +62,18 @@ export default {
                 } );
             }
         },
+        gotFocus() {
+            this.showChoices = true;
+        },
+        lostFocus() {
+            var self = this;
+            window.setTimeout( function() {
+                self.showChoices = false;
+            }, 300 );
+        },
         hasEnoughInputTypes() {
             return this.inputValue.length >= this.minLength
-        }
+        },
     }
 
 }
