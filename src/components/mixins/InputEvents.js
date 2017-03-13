@@ -4,9 +4,19 @@ export default {
         this.input.addEventListener( 'keyup', this.onKeyUp );
         this.input.addEventListener( 'focus', this.onInputFocus );
         this.input.addEventListener( 'blur', this.onInputFocusLost );
+
+        // Prevent form submit
+        this.input.addEventListener( 'keydown', this.onKeyDown );
     },
 
     methods: {
+        // Prevent form submit
+        onKeyDown( evt ) {
+            if (evt.keyCode == 13) {
+                evt.preventDefault();
+                return false;
+            }
+        },
         onKeyUp( evt ) {
             switch (evt.keyCode) {
                 case 38: // Arrow up
