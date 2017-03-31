@@ -3,14 +3,15 @@
         <section class="section">
             <div class="container">
                 <h3 class="title is-1">
-                    <a href="https://github.com/LasseHaslev/vue-confirm">
-                        @lassehaslev/vue-confirm
+                    <a href="https://github.com/LasseHaslev/vue-autocomplete">
+                        @lassehaslev/vue-autocomplete
                     </a>
                 </h3>
             </div>
         </section>
 
         <simple-coordinates-input></simple-coordinates-input>
+        <object-picker></object-picker>
 
         <div class="hero is-primary is-fullheight">
             <div class="hero-body"ı
@@ -22,6 +23,7 @@
 
 <script>
 import SimpleCoordinatesInput from './tutorials/SimpleCoordinatesInput';
+import ObjectPicker from './tutorials/ObjectPicker';
 export default {
     name: 'app',
     data () {
@@ -30,6 +32,7 @@ export default {
     },
     components: {
         SimpleCoordinatesInput,
+        ObjectPicker,
     }
 }
 </script>
