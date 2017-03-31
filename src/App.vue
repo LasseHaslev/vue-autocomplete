@@ -10,8 +10,9 @@
             </div>
         </section>
 
-        <simple-coordinates-input></simple-coordinates-input>
+        <array-picker></array-picker>
         <object-picker></object-picker>
+        <axios-complete></axios-complete>
 
         <div class="hero is-primary is-fullheight">
             <div class="hero-body"ı
@@ -22,8 +23,9 @@
 </template>
 
 <script>
-import SimpleCoordinatesInput from './tutorials/SimpleCoordinatesInput';
+import AxiosComplete from './tutorials/AxiosComplete';
 import ObjectPicker from './tutorials/ObjectPicker';
+import ArrayPicker from './tutorials/ArrayPicker';
 export default {
     name: 'app',
     data () {
@@ -31,8 +33,9 @@ export default {
         }
     },
     components: {
-        SimpleCoordinatesInput,
+        AxiosComplete,
         ObjectPicker,
+        ArrayPicker,
     }
 }
 </script>

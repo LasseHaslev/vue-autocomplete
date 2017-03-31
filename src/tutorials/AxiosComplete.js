@@ -5,7 +5,8 @@ export default {
         <div>
             <section class="section">
                 <div class="container">
-                    <h1 class="title">Simple object picker</h1>
+                    <h1 class="title">Load objects from server</h1>
+                    <h3 class="subtitle">This test uses axios</h3>
                 </div>
             </section>
             <section class="hero is-light">
